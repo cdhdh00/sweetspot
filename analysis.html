@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="선택한 동의 매장 위치와 주변의 다른 선택지를 살펴보세요." />
+<title>SweetSpot | 지도·주변 탐색</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.css" />
+<link rel="stylesheet" href="css/style.css?v=fav-style-20261030" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script src="https://unpkg.com/maplibre-gl@5.6.1/dist/maplibre-gl.js" defer></script>
+<script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/leaflet-maplibre-gl.js" defer></script>
+<script src="js/config.js?v=summary-20261029" defer></script><script src="js/common.js?v=favorites-20261030" defer></script><script src="js/geo.js?v=summary-20261029" defer></script><script src="js/store-insights.js?v=single1" defer></script><script src="js/analysis.js?v=nearby-clean-20261102" defer></script>
+</head><body>
+<header class="site-header"><nav class="nav wrap" aria-label="주요 메뉴"><a class="logo" href="index.html"><svg class="logo-icon dessert-icon" aria-hidden="true" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 21h18l-3 12H10L7 21Z" fill="#e9ad61" stroke="#386f52" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 21a5 5 0 0 1-1-9 6 6 0 0 1 6-6 6 6 0 0 1 11 4 5.5 5.5 0 0 1 3 11H7Z" fill="#edf4ec" stroke="#386f52" stroke-width="1.8" stroke-linejoin="round"/><path d="m13 24 1 6m5-6-1 6M11 14h2m6 1h2" stroke="#386f52" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="4" r="2.5" fill="#c86651"/></svg> SweetSpot</a><div class="nav-links"><a href="index.html">매장 찾기</a><a class="active" href="analysis.html">지도·주변 탐색</a></div></nav></header>
+<main class="wrap">
+<section class="hero compact"><div class="eyebrow">여러 곳을 둘러보고 싶은 날</div><h1>어디에 모여 있을까,<br><em>주변엔 무엇이 있을까?</em></h1><p>매장이 모인 위치를 지도에서 살펴보고, 주변의 다른 선택지를 비교해 보세요.</p></section>
+<section class="panel" aria-labelledby="summary-title"><div class="section-heading"><h2 id="summary-title">지금 둘러보는 동네</h2></div><p id="scope" class="muted" role="status">불러오는 중…</p>
+<p id="caveat" class="notice" hidden></p><button id="retry-analysis" class="button secondary" type="button" hidden>다시 불러오기</button></section>
+<section class="panel map-panel" aria-labelledby="map-title"><div class="section-heading"><h2 id="map-title">매장이 모여 있는 위치</h2></div>
+<p id="map-count" class="muted" role="status">매장 위치를 준비하고 있습니다.</p><div id="store-map" role="region" aria-label="매장 위치 지도"></div><p id="map-message" class="muted" role="status"></p>
+<div id="map-selected" class="map-selected" role="status"></div><p class="map-legend"><span>● 선택한 매장</span><span>● 반경 안의 다른 매장</span><span>○ 원은 선택 반경</span></p></section>
+<section class="panel compare-panel store-insights" aria-labelledby="insight-title"><h2 id="insight-title">선택한 매장 주변 분석</h2><p class="muted">이 매장 주변에서 얼마나 많은 다른 선택지를 찾을 수 있을까요?</p><div class="map-filters"><label>분석할 매장<select id="anchor-store" disabled><option value="">매장 불러오는 중…</option></select></label></div><p id="store-insight-summary" class="notice" role="status">매장을 불러오는 중…</p><div id="store-insight-results"></div></section>
+<section class="panel nearby-panel" aria-labelledby="nearby-title"><h2 id="nearby-title">주변의 다른 선택지</h2>
+<div class="map-filters"><label>주변 반경<select id="near-radius"><option value="250">250m</option><option value="500" selected>500m</option><option value="1000">1km</option></select></label></div>
+<div id="selected-store" class="selected-store"></div><p id="nearby-summary" class="notice" role="status">매장을 선택해 주세요.</p>
+<div id="nearby-list" class="nearby-list"></div><button id="more-nearby" type="button" class="button secondary" hidden>주변 매장 더 보기</button></section>
+</main>
+</body></html>
